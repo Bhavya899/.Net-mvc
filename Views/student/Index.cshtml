@@ -1,0 +1,41 @@
+﻿@model IEnumerable<MVCpostgres.Models.StudentModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+<table class="table" border = "1">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.stdid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.stdname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.stdid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.stdname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+        
+        </tr>
+}
+    </tbody>
+</table>

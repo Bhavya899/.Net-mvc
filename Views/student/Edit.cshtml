@@ -1,0 +1,26 @@
+﻿
+@model MVCpostgres.Models.StudentModel;
+
+<h2>Edit Student</h2>
+using(@Html.BeginForm("Edit","student"))
+{
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="stdid" />
+
+    <div class="form-group">
+        <label asp-for="stdname">Name:</label>
+        <input asp-for="stdname" class="form-control" />
+        <span asp-validation-for="stdname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="email">Email:</label>
+        <input asp-for="email" class="form-control" />
+        <span asp-validation-for="email" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<a asp-action="Index">Back to List</a>
+}
